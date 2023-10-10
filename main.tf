@@ -12,12 +12,12 @@ provider "tfe" {
 }
 
 resource "tfe_team" "Dev-Team" {
-  name         = "my-admin-team"
+  name         = "Dev-Team"
   organization = "diana-viktorova"
 }
 
 resource "tfe_project" "No-Code" {
-  name         = "myproject"
+  name         = "No-Code"
   organization = "diana-viktorova"
 }
 
