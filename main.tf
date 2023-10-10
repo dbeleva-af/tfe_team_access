@@ -28,6 +28,6 @@ resource "tfe_team_project_access" "admin" {
 
   project_access {
     settings = "read"
-    teams    = "admin"
+    teams    = "read"
   }
 }
