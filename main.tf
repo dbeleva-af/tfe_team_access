@@ -22,7 +22,7 @@ resource "tfe_project" "test" {
 }
 
 resource "tfe_team_project_access" "admin" {
-  access       = "admin"
+  access       = "custom"
   team_id      = tfe_team.admin.id
   project_id   = tfe_project.test.id
 
