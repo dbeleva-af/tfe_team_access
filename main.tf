@@ -11,11 +11,6 @@ provider "tfe" {
   # Configuration options
 }
 
-resource "tfe_team" "Dev-Team" {
-  name         = "Dev-Team"
-  organization = "diana-viktorova"
-}
-
 resource "tfe_project" "No-Code" {
   name         = "No-Code"
   organization = "diana-viktorova"
