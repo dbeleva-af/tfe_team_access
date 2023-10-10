@@ -11,20 +11,20 @@ provider "tfe" {
   # Configuration options
 }
 
-resource "tfe_team" "admin" {
+resource "tfe_team" "Dev-Team" {
   name         = "my-admin-team"
   organization = "diana-viktorova"
 }
 
-resource "tfe_project" "test" {
+resource "tfe_project" "Default Project" {
   name         = "myproject"
   organization = "diana-viktorova"
 }
 
 resource "tfe_team_project_access" "admin" {
   access       = "custom"
-  team_id      = tfe_team.admin.id
-  project_id   = tfe_project.test.id
+  team_id      = tfe_team.Dev-Team.id
+  project_id   = tfe_project.Default-project.id
 
   project_access {
     settings = "read"
