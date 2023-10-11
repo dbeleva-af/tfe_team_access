@@ -11,18 +11,34 @@ provider "tfe" {
   # Configuration options
 }
 
-resource "tfe_project" "No-Code" {
-  name         = "No-Code"
-  organization = "diana-viktorova"
+resource "tfe_team" "dev" {
+  name         = "my-dev-team"
+  organization = "my-org-name"
 }
 
-resource "tfe_team_project_access" "admin" {
+resource "tfe_project" "test" {
+  name         = "myproject"
+  organization = "my-org-name"
+}
+
+resource "tfe_team_project_access" "custom" {
   access       = "custom"
-  team_id      = tfe_team.Dev-Team.id
-  project_id   = tfe_project.No-Code.id
+  team_id      = tfe_team.dev.id
+  project_id   = tfe_project.test.id
 
   project_access {
     settings = "read"
-    teams    = "read"
+    teams    = "none"
+  }
+  workspace_access {
+    state_versions = "write"
+    sentinel_mocks = "none"
+    runs           = "apply"
+    variables      = "write"
+    create         = true
+    locking        = true
+    move           = false
+    delete         = false
+    run_tasks      = false
   }
 }
