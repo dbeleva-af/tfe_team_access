@@ -20,4 +20,3 @@ resource "tfe_project" "test" {
 #   team_id      = tfe_team.admin.id
 #   project_id   = tfe_project.test.id
 # }
-
