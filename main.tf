@@ -2,27 +2,22 @@ terraform {
   required_providers {
     tfe = {
       source = "hashicorp/tfe"
-      version = "0.49.2"
+      version = "0.44.1"
     }
   }
 }
 
-provider "tfe" {
-  # Configuration options
-}
-
 resource "tfe_team" "admin" {
-  name         = "my-admin-team"
-  organization = "diana-viktorova"
+  name         = "my-admin-teamtest"
+  organization = "diana-new"
 }
-
 resource "tfe_project" "test" {
-  name         = "myproject"
-  organization = "diana-viktorova"
+  name         = "myprojectTEST1"
+  organization = "diana-new"
 }
+# resource "tfe_team_project_access" "admin" {
+#   access       = "read"
+#   team_id      = tfe_team.admin.id
+#   project_id   = tfe_project.test.id
+# }
 
-resource "tfe_team_project_access" "admin" {
-  access       = "admin"
-  team_id      = tfe_team.admin.id
-  project_id   = tfe_project.test.id
-}
