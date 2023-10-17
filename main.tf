@@ -12,7 +12,7 @@ resource "tfe_team" "admin" {
   organization = "diana-new"
 }
 resource "tfe_project" "test" {
-  name         = "myprojectTEST1"
+  name         = "Default"
   organization = "diana-new"
 }
 # resource "tfe_team_project_access" "admin" {
