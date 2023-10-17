@@ -9,11 +9,11 @@ terraform {
 
 resource "tfe_team" "admin" {
   name         = "admin"
-  organization = "diana-new"
+  organization = "diana-viktorova"
 }
 resource "tfe_project" "test" {
   name         = "Default"
-  organization = "diana-new"
+  organization = "diana-viktorova"
 }
 # resource "tfe_team_project_access" "admin" {
 #   access       = "read"
