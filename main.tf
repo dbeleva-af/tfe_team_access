@@ -8,7 +8,7 @@ terraform {
 }
 
 resource "tfe_team" "admin" {
-  name         = "my-admin-teamtest"
+  name         = "admin"
   organization = "diana-new"
 }
 resource "tfe_project" "test" {
